@@ -1,4 +1,149 @@
-syntax on
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Wrap gitcommit file types at the appropriate length
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+
+" Fugitive, git interface for vim
+Plugin 'tpope/vim-fugitive'
+
+" Vim-repeat, repeat much more than simple inserts or deletes
+Plugin 'tpope/vim-repeat'
+
+" ctrlp.vim
+Plugin 'kien/ctrlp.vim'
+
+" Vim-markdown, markdwon syntax highlighting for Vim
+Plugin 'plasticboy/vim-markdown'
+
+" Gundo, Visualizeand traverse your undo tree
+Plugin 'sjl/gundo.vim'
+
+" Youcomplete me and syntastic, Absolute best autocomplete package in za world
+"Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'scrooloose/syntastic'
+
+" Vim-colors-solarized, Solarized color scheme
+Plugin 'altercation/vim-colors-solarized'
+
+" vim-tmux-navigator
+Plugin 'christoomey/vim-tmux-navigator'
+
+" Surround
+Plugin 'tpope/vim-surround'
+" MiniBufExpl
+Plugin 'fholgado/minibufexpl.vim'
+" Flake8
+"Plugin 'nvie/vim-flake8'
+" NERD tree
+Plugin 'scrooloose/nerdtree'
+
+"CoffeeScript
+Plugin 'kchmck/vim-coffee-script'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+syntax on
+let mapleader=","
 filetype indent plugin on
+
+" .vimrc quick edits
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>ez :e ~/.zshrc<CR>
+nmap <silent> <leader>sz :!source ~/.zshrc<CR>
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+nmap <silent> ,/ :nohlsearch<CR>
+
+"nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+map <F8> :Errors<CR>
+" Set backspace
+set backspace=eol,start,indent
+
+" Theme 
+if has('gui_running')
+    set background=dark
+else
+    set background=dark
+endif
+set t_Co=16
+let g:solarized_termcolors=16
+colorscheme solarized
+
+" Syntastic
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_cpp_checkers = ['gcc']
+
+" Auto loc list opening
+let g:syntastic_auto_loc_list = 0
+
+" Paste toggle
+set pastetoggle=<F2>
+
+" Line numbers
+set nu
+
+" Default formatting
+set textwidth=79  " lines longer than 79 columns will be broken
+set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4     " an hard TAB displays as 4 columns
+set expandtab     " insert spaces when hitting TABs
+set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround    " round indent to multiple of 'shiftwidth'
+set autoindent    " align the new line indent with the previous line
+set nowrap        " don't wrap lines
+set copyindent    " copies previous indentation on autoindenting
+set number        " always show line numbers
+set showmatch     " shows matching parenthesis
+set ignorecase    " ignore case when searching
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set undolevels=1000      " many undo levels
+set title                " change terminal title
+set nobackup
+set noswapfile
+
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
