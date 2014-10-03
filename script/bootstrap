@@ -141,6 +141,14 @@ install_vimfiles () {
 
     local overwrite_all=false backup_all=false skip_all=false
 
+    # Test checking for exists already
+    # if [ -d "$HOME/.vim/ftplugin" ]
+    # then
+    #   info 'vim/ftplugin does not exist. Creating...'
+    #   mkdir -p "$HOME/.vim/ftplugin"
+    # fi
+    mkdir -p "$HOME/.vim/ftplugin"
+
     for src in $(find "$DOTFILES_ROOT" -maxdepth 4 -name '*.vim')
     do
       dst="$HOME/.vim/ftplugin/$(basename "$src")"
