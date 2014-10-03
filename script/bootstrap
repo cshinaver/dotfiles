@@ -141,10 +141,10 @@ install_vimfiles () {
 
     local overwrite_all=false backup_all=false skip_all=false
 
-    for src in $(find "$DOTFILES_ROOT" -maxdepth 2 -name '*.vim')
+    for src in $(find "$DOTFILES_ROOT" -maxdepth 4 -name '*.vim')
     do
-        dst="$HOME/.vim/ftplugin/$(basename "$src")"
-        link_file "$src" "$dst"
+      dst="$HOME/.vim/ftplugin/$(basename "$src")"
+      link_file "$src" "$dst"
     done
 }
 
