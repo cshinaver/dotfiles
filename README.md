@@ -1,4 +1,4 @@
-# holman does dotfiles
+# shinaver does dotfiles
 
 ## dotfiles
 
@@ -77,6 +77,12 @@ something if I forget to make a check for a dependency.
 If you're brand-new to the project and run into any blockers, please
 [open an issue](https://github.com/holman/dotfiles/issues) on this repository
 and I'd love to get it fixed for you!
+
+## Todo
+Add Vundle automatic install
+Write install guide for first time users
+Fix command history (ctrl-r) thing
+add tmux.conf and screenrc
 
 ## thanks
 
