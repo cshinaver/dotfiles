@@ -19,10 +19,6 @@
 " set nobackup
 " set noswapfile
 
-" Execute with F7 key
-:map <F6> :!g++ -o vim.out % && ./vim.out; rm vim.out <cr>
-=======
-
 " C++ custom syntax highlighting
 " Additions for more C++ syntax highlighting.
 " Tobias Anderberg, 2013.
@@ -52,5 +48,5 @@ hi def link cppCustomStlNamespace  StlNamespace
 hi def link cppCustomStlContainers StlContainer
 
 " Execute with F7 key
-:map <F6> :!gcc -lm -o vim.out % && ./vim.out; rm vim.out <cr>
-:map <F7> :!make && ./`basename % .c`; make clean <cr>
+:map <F8> :!g++ -lm -o vim.out % && ./vim.out; rm vim.out <cr>
+:map <F7> :!make && ./`basename % .cpp`; make clean <cr>
