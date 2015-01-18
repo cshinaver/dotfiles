@@ -23,9 +23,6 @@ Plugin 'tpope/vim-repeat'
 " ctrlp.vim
 Plugin 'kien/ctrlp.vim'
 
-" Vim-markdown, markdwon syntax highlighting for Vim
-Plugin 'plasticboy/vim-markdown'
-
 " Gundo, Visualizeand traverse your undo tree
 Plugin 'sjl/gundo.vim'
 
@@ -42,15 +39,25 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 " Surround
 Plugin 'tpope/vim-surround'
+
 " MiniBufExpl
 Plugin 'fholgado/minibufexpl.vim'
+
 " Flake8
 "Plugin 'nvie/vim-flake8'
+
 " NERD tree
 Plugin 'scrooloose/nerdtree'
 
 "CoffeeScript
 Plugin 'kchmck/vim-coffee-script'
+
+" vim-objc
+Plugin 'b4winckler/vim-objc'
+
+" Markdown vim
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
