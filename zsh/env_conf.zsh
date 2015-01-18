@@ -4,4 +4,7 @@ if which tmux 2>&1 >/dev/null; then
     #test -z "$TMUX" && (tmux attach || mux start school )
 fi
 
+# Source customrc
+source ~/.customrc
+
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
