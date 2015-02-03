@@ -19,6 +19,6 @@
 " set nobackup
 " set noswapfile
 
-" Execute with F7 key
-":map <F6> :!gcc -lm -o vim.out % && ./vim.out; rm vim.out <cr>
+" Execute with F8 key
+:map <F6> :!gcc -lm -o vim.out % && ./vim.out; rm vim.out <cr>
 ":map <F7> :!make && ./`basename % .c`; make clean <cr>
