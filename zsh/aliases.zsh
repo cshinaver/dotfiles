@@ -9,3 +9,5 @@ alias info="info --vi-keys"
 alias tl="tmux list-sessions"
 function ta {tmux attach -t $1} # Attach to tmux sessions
 
+autoload -U zmv
+alias mmv='noglob zmv -W' # Zsh multimove
