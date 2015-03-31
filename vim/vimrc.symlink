@@ -120,6 +120,8 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_c_checkers = ['gcc']
 let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_enable_perl_checker = 1
 
 " Auto loc list opening
 let g:syntastic_auto_loc_list = 0
