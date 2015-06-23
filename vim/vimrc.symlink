@@ -166,3 +166,23 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" YCM default
+let g:ycm_global_ycm_extra_conf = "~/.dotfiles/vim/ycm_extra_conf.py"
+
+" Ctags
+map <f12> :!/usr/local/bin/ctags -R . &> /dev/null &<cr>
+
+
+fun! MatchCaseTag()
+  let ic = &ic
+  set noic
+  try
+    exe 'tjump ' . expand('<cword>')
+  finally
+    let &ic = ic
+  endtry
+endfun
+
+nnoremap <silent> :call MatchCaseTag()<CR>
+
