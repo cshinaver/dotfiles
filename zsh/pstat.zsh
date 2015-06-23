@@ -1,14 +1,18 @@
 # PolicyStat env variables and aliases
 #
 
-export PSTAT_DEPLOY=~/Documents/deployment_data
+export PSTAT_DEPLOY=~/pstat_deploy
 export VAGRANT_VBOX_GUI=1
 export PSTAT_DIR=~/Documents/PolicyStat
-export VAGRANT_DEFAULT_PROVIDER='docker'
+export POLICY_STAT_DIR=~/Documents/PolicyStat
+export VAGRANT_DEFAULT_PROVIDER='virtualbox'
+export VAGRANT_VBOX_MEMORY=4096
+export PSTAT_HIDE_DEBUG_TOOLBAR='YES'
+export HIPCHAT_AUTH_TOKEN=zTjH8o0B6HSsSy4CLNcakmD9pmpHcOOLyy0C9per
 
 alias vserver="cd $POLICY_STAT_DIR && vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py runserver'"
 alias vcelery="cd $POLICY_STAT_DIR; vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py celeryd -Q celery_medium --concurrency 2 --loglevel=DEBUG'"
-alias vssh="cd $POLICY_STAT_DIR && vagrant ssh dev"
+alias vssh="ssh -t dev"
 alias vcd="cd $POLICY_STAT_DIR"
 alias vup="vcd; vagrant up dev"
 alias vhalt="vcd; vagrant halt dev"
@@ -17,11 +21,11 @@ alias vbash="docker run -t -i --link mysql:mysql --link redis:redis -v $POLICY_S
 source virtualenvwrapper.sh
 
 vcmd () {
-    python $PSTAT_DIR/docker/vcmd.py $*
+    cd $POLICY_STAT_DIR && vagrant ssh dev -c "cd /home/vagrant/PolicyStat/; $*"
 }
 
 vtest () {
-    vssh -c "~/PolicyStat/scripts/run_tests.py --django-sqlite $1"
+   vssh "~/PolicyStat/scripts/run_tests.py --django-sqlite $1"
 }
 vstest () {
     vssh -c "~/PolicyStat/scripts/run_selenium_tests.py $1"
