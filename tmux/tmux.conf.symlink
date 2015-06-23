@@ -151,3 +151,5 @@ set -g display-panes-colour brightblue
 # clock                                                            
 setw -g clock-mode-colour yellow                                   
 # --- end colors
+
+set-window-option -g utf8 on
