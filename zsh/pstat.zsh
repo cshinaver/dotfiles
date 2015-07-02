@@ -26,7 +26,7 @@ vcmd () {
 }
 
 vtest () {
-   vssh "~/PolicyStat/scripts/run_tests.py --django-sqlite $*"
+   vssh "cd ~/PolicyStat/pstat && ~/PolicyStat/scripts/run_tests.py --django-sqlite $*"
 }
 vstest () {
     vssh -c "~/PolicyStat/scripts/run_selenium_tests.py $1"
