@@ -9,6 +9,11 @@ alias info="info --vi-keys"
 alias tl="tmux list-sessions"
 function ta {tmux attach -t $1} # Attach to tmux sessions
 alias b2d='eval "$(boot2docker shellinit)"'
+
+# Docker stuff
+alias dco="docker-compose"
+alias dcp="dco run --service-ports web"
+alias dcr="dco run web"
 function hrun {heroku ps:scale web=0 &> /dev/null; echo $1 > /dev/stdout; heroku ps:scale web=1 &> /dev/null}
 
 autoload -U zmv
