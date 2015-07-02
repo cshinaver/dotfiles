@@ -16,6 +16,7 @@ alias vssh="ssh -t dev"
 alias vcd="cd $POLICY_STAT_DIR"
 alias vup="vcd; vagrant up dev"
 alias vhalt="vcd; vagrant halt dev"
+alias vsh="vcmd python pstat/manage.py shell_plus"
 
 alias vbash="docker run -t -i --link mysql:mysql --link redis:redis -v $POLICY_STAT_DIR:/home/vagrant/PolicyStat cshinaver/policystat:dev_base bash"
 source virtualenvwrapper.sh
