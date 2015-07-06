@@ -104,9 +104,6 @@ let maplocalleader = ','
 set exrc
 set secure
 
-" Vimux propt command 
-nmap <leader>vp :VimuxPromptCommand<CR>
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -226,6 +223,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Vimux
+
+" Vimux propt command 
+nmap <leader>vp :VimuxPromptCommand<CR>
 
 nmap <leader>vq :VimuxCloseRunner<CR>
 
