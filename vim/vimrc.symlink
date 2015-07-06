@@ -97,6 +97,10 @@ filetype indent plugin on
 " Map localleader to ,
 let maplocalleader = ','
 
+" Allow project specific .exrc files
+set exrc
+set secure
+
 " Vimux propt command 
 nmap <leader>vp :VimuxPromptCommand<CR>
 
