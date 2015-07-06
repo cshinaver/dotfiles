@@ -43,6 +43,9 @@ Plugin 'tpope/vim-surround'
 " MiniBufExpl
 Plugin 'fholgado/minibufexpl.vim'
 
+" VimClojure
+Plugin 'vim-scripts/VimClojure'
+
 " Flake8
 "Plugin 'nvie/vim-flake8'
 
@@ -87,6 +90,10 @@ let mapleader=","
 filetype indent plugin on
 
 " .vimrc quick edits
+
+" Map localleader to ,
+let maplocalleader = ','
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -186,3 +193,9 @@ endfun
 
 nnoremap <silent> :call MatchCaseTag()<CR>
 
+" End Ctags
+
+" VimClojure
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
+let vimclojure#WantNailgun = 1 
