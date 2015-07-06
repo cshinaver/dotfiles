@@ -8,7 +8,7 @@ export POLICY_STAT_DIR=~/Documents/PolicyStat
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 export VAGRANT_VBOX_MEMORY=4096
 export PSTAT_HIDE_DEBUG_TOOLBAR='YES'
-export HIPCHAT_AUTH_TOKEN=zTjH8o0B6HSsSy4CLNcakmD9pmpHcOOLyy0C9per
+export HIPCHAT_AUTH_TOKEN=HcPoLv4MDHljGp3RoEJ16A5CLGBOKCVhKDiEqB3o
 
 alias vserver="cd $POLICY_STAT_DIR && vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py runserver'"
 alias vcelery="cd $POLICY_STAT_DIR; vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py celeryd -Q celery_medium --concurrency 2 --loglevel=DEBUG'"
