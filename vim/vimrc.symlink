@@ -46,6 +46,9 @@ Plugin 'bling/vim-airline'
 " Vimux
 Plugin 'benmills/vimux'
 
+" Vim-test
+Plugin 'janko-m/vim-test'
+
 " VimClojure
 Plugin 'vim-scripts/VimClojure'
 
@@ -221,3 +224,18 @@ let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" vim-test 
+
+" Run tests with vimux
+let test#strategy = "vimux"
+
+" Run python tests with nose
+let test#python#runner = 'nose'
+
+" map vim-test keys
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
