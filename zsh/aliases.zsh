@@ -10,6 +10,9 @@ alias tl="tmux list-sessions"
 function ta {tmux attach -t $1} # Attach to tmux sessions
 alias b2d='eval "$(boot2docker shellinit)"'
 
+# Git stuff
+alias gdc="git diff --cached"
+
 # Docker stuff
 alias dco="docker-compose"
 alias dcp="dco run --service-ports web"
