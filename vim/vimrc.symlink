@@ -43,6 +43,9 @@ Plugin 'tpope/vim-surround'
 " Vim airline
 Plugin 'bling/vim-airline'
 
+" Vimux
+Plugin 'benmills/vimux'
+
 " VimClojure
 Plugin 'vim-scripts/VimClojure'
 
@@ -93,6 +96,9 @@ filetype indent plugin on
 
 " Map localleader to ,
 let maplocalleader = ','
+
+" Vimux propt command 
+nmap <leader>vp :VimuxPromptCommand<CR>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
