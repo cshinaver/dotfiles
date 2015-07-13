@@ -52,6 +52,12 @@ Plugin 'janko-m/vim-test'
 " VimClojure
 Plugin 'vim-scripts/VimClojure'
 
+" vim-javascript
+Plugin 'pangloss/vim-javascript'
+
+" vim-jsx
+Plugin 'mxw/vim-jsx'
+
 " Flake8
 "Plugin 'nvie/vim-flake8'
 
@@ -243,3 +249,6 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" vim-jsx
+let g:syntastic_javascript_checkers = ['jsxhint']
