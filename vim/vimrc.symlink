@@ -210,7 +210,7 @@ nnoremap <silent> :call MatchCaseTag()<CR>
 " VimClojure
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
-let vimclojure#WantNailgun = 1 
+let vimclojure#WantNailgun = 1
 
 " Vim airline
 
@@ -230,12 +230,12 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Vimux
 
-" Vimux propt command 
+" Vimux propt command
 nmap <leader>vp :VimuxPromptCommand<CR>
 
 nmap <leader>vq :VimuxCloseRunner<CR>
 
-" vim-test 
+" vim-test
 
 " Run tests with vimux
 let test#strategy = "vimux"
