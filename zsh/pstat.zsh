@@ -27,7 +27,12 @@ vcmd () {
 
 vtest () {
     args=$(echo "$*" | sed "s:pstat/::")
-    vssh "cd ~/PolicyStat/pstat && ~/PolicyStat/scripts/run_tests.py --django-sqlite $args"
+    if [[ $args == *"selenium_test"* ]]
+    then
+        vssh "cd ~/PolicyStat/pstat && ~/PolicyStat/scripts/run_selenium_tests.py $args"
+    else
+        vssh "cd ~/PolicyStat/pstat && ~/PolicyStat/scripts/run_tests.py --django-sqlite $args"
+    fi
 }
 vstest () {
     vssh -c "~/PolicyStat/scripts/run_selenium_tests.py $1"
