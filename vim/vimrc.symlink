@@ -113,6 +113,12 @@ let maplocalleader = ','
 set exrc
 set secure
 
+" ,, swaps files
+nmap <leader><leader> <C-^>
+
+" %% expands to curdir
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
