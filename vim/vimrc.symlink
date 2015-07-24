@@ -26,9 +26,6 @@ Plugin 'kien/ctrlp.vim'
 " Gundo, Visualizeand traverse your undo tree
 Plugin 'sjl/gundo.vim'
 
-" Youcomplete me and syntastic, Absolute best autocomplete package in za world
-Plugin 'Valloric/YouCompleteMe'
-
 Plugin 'scrooloose/syntastic'
 
 " Vim-colors-solarized, Solarized color scheme
