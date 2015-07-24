@@ -74,6 +74,9 @@ Plugin 'b4winckler/vim-objc'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+" unimparied
+Plugin 'tpope/vim-unimpaired'
+
 " Snippets
 " Plugin 'MarcWeber/vim-addon-mw-utils'
 " Plugin 'tomtom/tlib_vim'
