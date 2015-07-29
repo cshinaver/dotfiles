@@ -70,6 +70,13 @@ docker_clean_all () {
 }
 
 # Completion
+# Nosecomplete plugin with run_tests
+autoload -U compinit
+compinit
+
+autoload -U bashcompinit
+bashcompinit
+
 _nosetests_pstat()
 {
     cur="${COMP_WORDS[COMP_CWORD]}"

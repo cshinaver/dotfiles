@@ -16,5 +16,4 @@ _nosetests()
     cur="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=(`nosecomplete -s python ${cur} 2>/dev/null`)
 }
-complete -o nospace -F _nosetests vtest
 complete -o nospace -F _nosetests nosetests
