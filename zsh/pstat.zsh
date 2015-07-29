@@ -90,9 +90,9 @@ _fix_site_status()
     local current_word prev_word things_to_fix hosts queues
     current_word="${COMP_WORDS[COMP_WORD]}"
     prev_word="${COMP_WORDS[COMP_WORD-1]}"
-    things_to_fix=$(cat $POLICY_STAT_DIR/scripts/fix_site_status.sh |
-    grep 'echo.* \[.*\]' | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/,//g')
-    hosts=$(cat ~/.ssh/config | grep "p.*stat" | awk '{print $2}')
+    things_to_fix=$(grep 'echo.* \[.*\] ' $POLICY_STAT_DIR/scripts/fix_site_status.sh |
+    sed 's/.*\[\(.*\)\].*/\1/' | sed 's/,//g')
+    hosts=$(grep "p.*stat" ~/.ssh/config | awk '{print $2}')
 
     if [[ "${COMP_WORDS[1]}" == *"com"* ]]; then
         COMPREPLY=( $(compgen -W "${things_to_fix}" -- ${current_word}) )
