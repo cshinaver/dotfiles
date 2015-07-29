@@ -14,6 +14,7 @@ bashcompinit
 _nosetests()
 {
     cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=(`cd $POLICY_STAT_DIR/pstat && nosecomplete -s python ${cur} 2>/dev/null`)
+    COMPREPLY=(`nosecomplete -s python ${cur} 2>/dev/null`)
 }
 complete -o nospace -F _nosetests vtest
+complete -o nospace -F _nosetests nosetests
