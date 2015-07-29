@@ -83,3 +83,21 @@ _nosetests_pstat()
     COMPREPLY=(`cd $POLICY_STAT_DIR/pstat && nosecomplete -s python ${cur} 2>/dev/null`)
 }
 complete -o nospace -F _nosetests_pstat vtest
+
+# fix_site_status autocomplete
+_fix_site_status()
+{
+    local current_word prev_word things_to_fix hosts queues
+    current_word="${COMP_WORDS[COMP_WORD]}"
+    prev_word="${COMP_WORDS[COMP_WORD-1]}"
+    things_to_fix=$(cat $POLICY_STAT_DIR/scripts/fix_site_status.sh |
+    grep 'echo.* \[.*\]' | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/,//g')
+    hosts=$(cat ~/.ssh/config | grep "p.*stat" | awk '{print $2}')
+
+    if [[ "${COMP_WORDS[1]}" == *"com"* ]]; then
+        COMPREPLY=( $(compgen -W "${things_to_fix}" -- ${current_word}) )
+    else
+        COMPREPLY=( $(compgen -W "${hosts}" -- ${current_word}) )
+    fi
+}
+complete -F _fix_site_status fix_site_status.sh
