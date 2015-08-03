@@ -271,3 +271,6 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v[\/].*pyc$',
     \ 'dir': '\v[\/].*node_module.*',
     \ }
+
+" Vim register is system register
+set clipboard=unnamed
