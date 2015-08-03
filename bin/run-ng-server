@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if lsof -i :2113 | grep java &> /dev/null; then
+    kill -9 `lsof -i :2113 | grep java | awk '{print $2}'`
+fi
+
+cd ~/Dropbox/Programming/Clojure/test && (ng-server &> /dev/null &)
