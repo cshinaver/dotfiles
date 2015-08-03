@@ -17,6 +17,7 @@ alias gdc="git diff --cached"
 alias dco="docker-compose"
 alias dcp="dco run --service-ports web"
 alias dcr="dco run web"
+alias dsh="docker run -v $(pwd):/kipwire_root -t -i --link db:db kipwire_web bash"
 function hrun {heroku ps:scale web=0 &> /dev/null; echo $1 > /dev/stdout; heroku ps:scale web=1 &> /dev/null}
 
 autoload -U zmv
