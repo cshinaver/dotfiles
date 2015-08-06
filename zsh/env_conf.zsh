@@ -1,5 +1,7 @@
 # Source customrc
-source ~/.customrc
+if [[ -f ~/.customrc ]]; then
+    source ~/.customrc
+fi
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

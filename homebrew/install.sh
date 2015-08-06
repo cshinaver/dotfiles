@@ -14,7 +14,4 @@ if [[ $(uname) = 'Darwin' ]]; then
     fi
 fi
 
-# Install homebrew packages
-brew install grc coreutils spark
-
 exit 0
