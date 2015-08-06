@@ -67,19 +67,3 @@ docker_clean_all () {
     # Remove Docker images
     sudo docker rmi $( sudo docker images | grep '<none>' | tr -s ' ' | cut -d ' ' -f 3)
 }
-
-# Completion
-# Nosecomplete plugin with run_tests
-autoload -U compinit
-compinit
-
-autoload -U bashcompinit
-bashcompinit
-
-_nosetests_pstat()
-{
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=(`cd $POLICY_STAT_DIR/pstat && nosecomplete -s python ${cur} 2>/dev/null`)
-}
-complete -o nospace -F _nosetests_pstat vtest
-

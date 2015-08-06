@@ -18,5 +18,12 @@ _nosetests()
 }
 complete -o nospace -F _nosetests nosetests
 
+# Pstat completion
 source $POLICY_STAT_DIR/scripts/fix_site_status_autocomplete.sh
-complete -o nospace -F _fix_site_status fix_site_status.sh
+
+_nosetests_pstat()
+{
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=(`cd $POLICY_STAT_DIR/pstat && nosecomplete -s python ${cur} 2>/dev/null`)
+}
+complete -o nospace -F _nosetests_pstat vtest
