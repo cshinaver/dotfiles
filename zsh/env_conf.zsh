@@ -6,9 +6,6 @@ if which tmux 2>&1 >/dev/null; then
     fi
 fi
 
-# Source customrc
-source ~/.customrc
-
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Nailgun for VimClojure REPL
