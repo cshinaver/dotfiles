@@ -17,3 +17,6 @@ _nosetests()
     COMPREPLY=(`nosecomplete -s python ${cur} 2>/dev/null`)
 }
 complete -o nospace -F _nosetests nosetests
+
+source $POLICY_STAT_DIR/scripts/fix_site_status_autocomplete.sh
+complete -o nospace -F _fix_site_status fix_site_status.sh
