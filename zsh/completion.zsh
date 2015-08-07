@@ -19,8 +19,8 @@ _nosetests()
 complete -o nospace -F _nosetests nosetests
 
 # Pstat completion
-FIX_SITE_STATUS_ENABLE_AUTOCOMPLETE=1 source $POLICYSTAT_PROJECT_ROOT/scripts/fix_site_status.sh
-complete -F _fix_site_status fix_site_status.sh
+#FIX_SITE_STATUS_ENABLE_AUTOCOMPLETE=1 source $POLICYSTAT_PROJECT_ROOT/scripts/fix_site_status.sh
+#complete -F _fix_site_status fix_site_status.sh
 
 _nosetests_pstat()
 {
