@@ -20,6 +20,7 @@ complete -o nospace -F _nosetests nosetests
 
 # Pstat completion
 source $POLICY_STAT_DIR/scripts/fix_site_status_autocomplete.sh
+complete -F _fix_site_status fix_site_status.sh
 
 _nosetests_pstat()
 {
