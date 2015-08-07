@@ -4,24 +4,24 @@
 export PSTAT_DEPLOY=~/pstat_deploy
 export VAGRANT_VBOX_GUI=1
 export PSTAT_DIR=~/Documents/PolicyStat
-export POLICY_STAT_DIR=~/Documents/PolicyStat
+export POLICYSTAT_PROJECT_ROOT=~/Documents/PolicyStat
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 export VAGRANT_VBOX_MEMORY=2048
 export PSTAT_HIDE_DEBUG_TOOLBAR='YES'
 
-alias vserver="cd $POLICY_STAT_DIR && vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py runserver'"
-alias vcelery="cd $POLICY_STAT_DIR; vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py celeryd -Q celery_medium --concurrency 2 --loglevel=DEBUG'"
+alias vserver="cd $POLICYSTAT_PROJECT_ROOT && vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py runserver'"
+alias vcelery="cd $POLICYSTAT_PROJECT_ROOT; vagrant ssh dev -c 'gnome-terminal -x ~/PolicyStat/pstat/manage.py celeryd -Q celery_medium --concurrency 2 --loglevel=DEBUG'"
 alias vssh="ssh -t dev"
-alias vcd="cd $POLICY_STAT_DIR"
+alias vcd="cd $POLICYSTAT_PROJECT_ROOT"
 alias vup="vcd; vagrant up dev"
 alias vhalt="vcd; vagrant halt dev"
 alias vsh="vcmd python pstat/manage.py shell_plus"
 
-alias vbash="docker run -t -i --link mysql:mysql --link redis:redis -v $POLICY_STAT_DIR:/home/vagrant/PolicyStat cshinaver/policystat:dev_base bash"
+alias vbash="docker run -t -i --link mysql:mysql --link redis:redis -v $POLICYSTAT_PROJECT_ROOT:/home/vagrant/PolicyStat cshinaver/policystat:dev_base bash"
 source virtualenvwrapper.sh
 
 vcmd () {
-    cd $POLICY_STAT_DIR && vagrant ssh dev -c "cd /home/vagrant/PolicyStat/; $*"
+    cd $POLICYSTAT_PROJECT_ROOT && vagrant ssh dev -c "cd /home/vagrant/PolicyStat/; $*"
 }
 
 vtest () {
