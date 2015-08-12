@@ -258,6 +258,9 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 " delete fugitive:// buffers after leaving them
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" Strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " .. moves to head of fugitive branch only in fugitive
 autocmd User fugitive 
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
