@@ -262,7 +262,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufWritePre * :%s/\s\+$//e
 
 " .. moves to head of fugitive branch only in fugitive
-autocmd User fugitive 
+autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
