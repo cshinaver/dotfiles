@@ -3,6 +3,8 @@ if [[ -f ~/.customrc ]]; then
     source ~/.customrc
 fi
 
+command -v virtualenvwrapper.sh &>/dev/null && source virtualenvwrapper.sh
+
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Nailgun for VimClojure REPL
