@@ -148,3 +148,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Start dropbox on begin
+exec --no-startup-id dropbox start
