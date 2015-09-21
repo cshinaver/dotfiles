@@ -46,9 +46,6 @@ Plugin 'benmills/vimux'
 " Vim-test
 Plugin 'janko-m/vim-test'
 
-" VimClojure
-Plugin 'vim-scripts/VimClojure'
-
 " vim-javascript
 Plugin 'pangloss/vim-javascript'
 
@@ -208,11 +205,6 @@ endfun
 nnoremap <silent> :call MatchCaseTag()<CR>
 
 " End Ctags
-
-" VimClojure
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
-let vimclojure#WantNailgun = 1
 
 " Vim airline
 
