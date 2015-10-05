@@ -273,3 +273,6 @@ let g:ctrlp_custom_ignore = {
 
 " Vim register is system register
 set clipboard=unnamed
+
+" F9 runs Exuberant Ctags
+nmap <F9> :!ctags -R .<CR><CR>
