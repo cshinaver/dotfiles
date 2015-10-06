@@ -272,7 +272,5 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/].*node_module.*',
     \ }
 
-" Vim register is system register
-set clipboard=unnamed
 " Clojure Paredit
 let g:paredit_mode = 1
