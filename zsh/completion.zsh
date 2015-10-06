@@ -19,11 +19,11 @@ _nosetests()
 complete -o nospace -F _nosetests nosetests
 
 # Pstat completion
-if [[ -f $POLICYSTAT_PROJECT_ROOT/scripts/fix_site_status.sh ]]
-then
-    FIX_SITE_STATUS_ENABLE_AUTOCOMPLETE=1 source $POLICYSTAT_PROJECT_ROOT/scripts/fix_site_status.sh
-    complete -F _fix_site_status fix_site_status.sh
-fi
+#if [[ -f $POLICYSTAT_PROJECT_ROOT/scripts/fix_site_status.sh ]]
+#then
+#    FIX_SITE_STATUS_ENABLE_AUTOCOMPLETE=1 source $POLICYSTAT_PROJECT_ROOT/scripts/fix_site_status.sh
+#    complete -F _fix_site_status fix_site_status.sh
+#fi
 
 _nosetests_pstat()
 {
