@@ -37,6 +37,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " emmet-vim (html)
 Plugin 'mattn/emmet-vim'
 
+" textobj-indent
+Plugin 'michaeljsmith/vim-indent-object'
+
 " Surround
 Plugin 'tpope/vim-surround'
 
