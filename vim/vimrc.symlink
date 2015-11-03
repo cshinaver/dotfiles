@@ -272,6 +272,9 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/].*node_module.*',
     \ }
 
+" Map CtrlPTag to CTRL T
+nnoremap <C-t> :CtrlPTag<CR>
+
 " Clojure Paredit
 let g:paredit_mode = 1
 
