@@ -34,6 +34,9 @@ Plugin 'altercation/vim-colors-solarized'
 " vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
+" emmet-vim (html)
+Plugin 'mattn/emmet-vim'
+
 " Surround
 Plugin 'tpope/vim-surround'
 
@@ -112,8 +115,11 @@ let maplocalleader = ','
 set exrc
 set secure
 
-" ,, swaps files
-nmap <leader><leader> <C-^>
+" emmet leader key is
+let g:user_emmet_leader_key=','
+" Emmet only works for html/css files
+let g:user_emmet_install_global = 0
+autocmd FileType html,htmldjango,css EmmetInstall
 
 " %% expands to curdir
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
