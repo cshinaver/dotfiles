@@ -284,8 +284,5 @@ let g:ctrlp_custom_ignore = {
 " Map CtrlPTag to CTRL T
 nnoremap <C-t> :CtrlPTag<CR>
 
-" Clojure Paredit
-let g:paredit_mode = 1
-
 " F9 runs Exuberant Ctags
 nmap <F9> :!ctags -R .<CR><CR>
