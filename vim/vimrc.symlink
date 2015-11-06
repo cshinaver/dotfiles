@@ -81,6 +81,9 @@ Plugin 'venantius/vim-cljfmt' " Style reformatting
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+" dispatch
+Plugin 'tpope/vim-dispatch'
+
 " unimparied
 Plugin 'tpope/vim-unimpaired'
 
