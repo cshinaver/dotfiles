@@ -74,6 +74,8 @@ Plugin 'b4winckler/vim-objc'
 Plugin 'guns/vim-clojure-static' " syntax highlighting/indentation
 Plugin 'tpope/vim-fireplace' " REPL and dynamic development
 Plugin 'vim-scripts/paredit.vim' " Paredit
+Plugin 'venantius/vim-eastwood' " Syntax checking
+Plugin 'venantius/vim-cljfmt' " Style reformatting
 
 " Markdown vim
 Plugin 'godlygeek/tabular'
