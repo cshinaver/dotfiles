@@ -5,4 +5,7 @@ then
     mkdir ~/.i3
 fi
 
-ln -s ~/.dotfiles/config/config ~/.i3/config
+if ! [[ -e ~/.i3/config ]]
+then
+    ln -s ~/.dotfiles/config/config ~/.i3/config
+fi
