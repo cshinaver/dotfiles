@@ -34,6 +34,9 @@ Plugin 'altercation/vim-colors-solarized'
 " vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
+" rust.vim
+Plugin 'rust-lang/rust.vim'
+
 " emmet-vim (html)
 Plugin 'mattn/emmet-vim'
 
