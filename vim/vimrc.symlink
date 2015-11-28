@@ -173,6 +173,9 @@ let g:syntastic_cpp_check_header = 1
 let g:syntastic_perl_checkers = ['perl']
 let g:syntastic_enable_perl_checker = 1
 
+" cppman man pages for C++
+autocmd FileType cpp set keywordprg=cppman
+
 " Auto loc list opening
 let g:syntastic_auto_loc_list = 0
 
