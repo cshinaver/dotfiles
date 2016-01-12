@@ -2,6 +2,8 @@
 #
 
 export PSTAT_DEPLOY=~/pstat_deploy
+export PSTAT_NAME=charles
+export PSTAT_PGP_SECRET_KEY_ID=A5146428
 export VAGRANT_VBOX_GUI=1
 export PSTAT_DIR=~/Documents/PolicyStat
 export POLICYSTAT_PROJECT_ROOT=~/Documents/PolicyStat
