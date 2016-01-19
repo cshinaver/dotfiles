@@ -47,7 +47,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-surround'
 
 " Vim airline
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 
 " Vimux
 Plugin 'benmills/vimux'
