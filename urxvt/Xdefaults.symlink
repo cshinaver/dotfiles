@@ -50,3 +50,7 @@ URxvt*color18:                        #343D46
 URxvt*color19:                        #4F5B66
 URxvt*color20:                        #A7ADBA
 URxvt*color21:                        #CDD3DE
+
+! -- Fonts -- !
+URxvt.font:xft:Source Code Pro:pixelsize=13
+URxvt.bondfont:xft:Source Code Pro Bold:pixelsize=13
