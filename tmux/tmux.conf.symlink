@@ -30,18 +30,12 @@ bind a send-prefix
 # set window and pane index to 1 (0 by default)
 set-option -g base-index 1
 setw -g pane-base-index 1
- 
+
  # resize panes using PREFIX H, J, K, L
 bind H resize-pane -L 5
 bind J resize-pane -D 5
 bind K resize-pane -U 5
 bind L resize-pane -R 5
-
- # explicitly disable mouse control
-setw -g mode-mouse off
-set -g mouse-select-pane off
-set -g mouse-resize-pane off
-set -g mouse-select-window off
 
 # ---------------------
 # Copy & Paste
@@ -49,16 +43,11 @@ set -g mouse-select-window off
 # use vim keybindings in copy mode
 setw -g mode-keys vi
 
-# # setup 'v' to begin selection as in Vim
-# bind-key -t vi-copy v begin-selection
-# bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
 
-    # update default binding of 'Enter' to also use copy-pipe
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
-
-bind y run 'tmux save-buffer - | reattach-to-user-namespace pbcopy '
-bind C-y run 'tmux save-buffer - | reattach-to-user-namespace pbcopy '
+# Setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
 
     # ----------------------
     # set some pretty colors
@@ -153,3 +142,6 @@ setw -g clock-mode-colour yellow
 # --- end colors
 
 set-window-option -g utf8 on
+
+# OS Specific loading
+if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'

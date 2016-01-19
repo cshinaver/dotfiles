@@ -18,11 +18,10 @@ export DOTFILES=$HOME/.dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
-# use .localrc for SUPER SECRET CRAP that you don't
+# use .customrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
+if [[ -f ~/.customrc ]]; then
+    source ~/.customrc
 fi
 
 # all of our zsh files

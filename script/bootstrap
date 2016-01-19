@@ -156,10 +156,22 @@ install_vimfiles () {
     done
 }
 
+install_weechat_files () {
+    info 'installing weechat files'
+
+    local overwrite_all=false backup_all=false skip_all=false
+
+    for src in $(find "$DOTFILES_ROOT" -maxdepth 4 -name '*.weechat')
+    do
+      dst="$HOME/.weechat/$(basename "$src" | sed 's/\.weechat//')"
+      link_file "$src" "$dst"
+    done
+}
 
 setup_gitconfig
 install_dotfiles
 install_vimfiles
+install_weechat_files
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
