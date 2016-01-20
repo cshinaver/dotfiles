@@ -3,6 +3,8 @@
 #else
 #  export PS1='%3~$(git_info_for_prompt)%# '
 #fi
+# Remove initial arrow
+export PS1=$(echo $PS1 | cut -d ' ' -f2- | sed 's/^/ /')
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
