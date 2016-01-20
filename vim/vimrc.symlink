@@ -302,6 +302,6 @@ nnoremap <C-t> :CtrlPTag<CR>
 nmap <F9> :!ctags -R .<CR><CR>
 
 " Custom .vimrc in home directory
-if filereadable(".vimrc.custom")
-    so .vimrc.custom
+if filereadable($HOME."/.vimrc.custom")
+    so $HOME/.vimrc.custom
 endif
