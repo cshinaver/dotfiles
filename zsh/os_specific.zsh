@@ -1,7 +1,6 @@
 # checks (stolen from zshuery)
 if [[ $(uname) = 'Linux' ]]; then
     IS_LINUX=1
-    export TERM="xterm-256color"
     alias ports="sudo netstat -tapen | grep"
     export PATH="/usr/bin:$PATH"
 
