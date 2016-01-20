@@ -301,3 +301,7 @@ nnoremap <C-t> :CtrlPTag<CR>
 " F9 runs Exuberant Ctags
 nmap <F9> :!ctags -R .<CR><CR>
 
+" Custom .vimrc in home directory
+if filereadable(".vimrc.custom")
+    so .vimrc.custom
+endif
