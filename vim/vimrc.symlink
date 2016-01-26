@@ -305,3 +305,6 @@ nmap <F9> :!ctags -R .<CR><CR>
 if filereadable($HOME."/.vimrc.custom")
     so $HOME/.vimrc.custom
 endif
+
+" Fold level none
+set nofoldenable
