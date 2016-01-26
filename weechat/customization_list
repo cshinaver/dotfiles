@@ -1,5 +1,7 @@
 # Plugins
 /script install buffers.pl buffer_autoclose.py iset.pl go.py colorize_nicks.py beep.pl
+# for mac (requires pync
+#/script install notification_center.py
 /key bind meta-g /go
 
 # Enable mouse
