@@ -1,0 +1,4 @@
+#!/bin/bash
+# sprunge: command line pastebin
+
+curl -F 'sprunge=<-' http://sprunge.us
