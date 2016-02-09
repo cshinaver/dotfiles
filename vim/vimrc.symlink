@@ -29,7 +29,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/syntastic'
 
 " Vim-colors-solarized, Solarized color scheme
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 " vim-tmux-navigator
 Plugin 'christoomey/vim-tmux-navigator'
