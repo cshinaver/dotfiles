@@ -73,9 +73,6 @@ Plugin 'kchmck/vim-coffee-script'
 " vim-objc
 Plugin 'b4winckler/vim-objc'
 
-" base16-vim
-Plugin 'chriskempson/base16-vim'
-
 " Clojure
 Plugin 'guns/vim-clojure-static' " syntax highlighting/indentation
 Plugin 'tpope/vim-fireplace' " REPL and dynamic development
