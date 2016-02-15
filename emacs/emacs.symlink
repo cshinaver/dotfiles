@@ -1,5 +1,5 @@
 (require 'package)
-(setq package-list '(magit evil-magit))
+(setq package-list '(magit evil-magit flycheck))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (require 'evil)
@@ -33,3 +33,6 @@
 ;; Works around the fact that Evil uses read-event directly when in operator state, which
 ;; doesn't use the key-translation-map.
 (define-key evil-operator-state-map (kbd "C-c") 'keyboard-quit)
+
+;; enable flycheck always
+(global-flycheck-mode)
