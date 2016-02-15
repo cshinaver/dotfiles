@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 (require 'package)
-(setq package-list '(magit evil-magit flycheck))
+(setq package-list '(magit evil-magit flycheck python-mode))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (require 'evil)
@@ -37,6 +37,12 @@
 
 ;; enable flycheck always
 (global-flycheck-mode)
+
+;; Python mode loading
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
 ;; Define prefix as c-c
 ;; Note: lexical-binding must be t in order for this to work correctly.
 (defun make-conditional-key-translation (key-from key-to translate-keys-p)
