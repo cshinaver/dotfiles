@@ -1,8 +1,15 @@
 (require 'package)
+(setq package-list '(magit evil-magit))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (require 'evil)
 (evil-mode 1)
+
+;; Install all packages
+(defun install-all-packages ()
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (package-install package))))
 
 ; C-hjkl for window movement
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
