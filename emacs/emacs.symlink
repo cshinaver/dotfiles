@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 (require 'package)
-(setq package-list '(magit evil-magit flycheck python-mode))
+(setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (require 'evil)
@@ -56,3 +56,14 @@
   "Returns whether conditional key translations should be active.  See make-conditional-key-translation function. "
    (or (evil-motion-state-p) (evil-normal-state-p) (evil-visual-state-p)))
 (make-conditional-key-translation (kbd ",") (kbd "C-c") 'my-translate-keys-p)
+
+;; Clojure setup
+;; Paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
