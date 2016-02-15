@@ -1,2 +1,14 @@
+# Font set to Source Code Pro
 URxvt.font: xft:Source Code Pro:size=10
 URxvt.font: xft:Source Code Pro:bold:size=10
+
+## URLs are clickable
+#URxvt.perl-ext-common: default,matcher
+#URxvt.url-launcher: /usr/bin/google-chrome-stable
+#URxvt.matcher.button: 1
+
+# Yankable URLs
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
