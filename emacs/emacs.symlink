@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (require 'package)
 (setq package-list '(magit evil-magit flycheck))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -36,3 +37,16 @@
 
 ;; enable flycheck always
 (global-flycheck-mode)
+;; Define prefix as c-c
+;; Note: lexical-binding must be t in order for this to work correctly.
+(defun make-conditional-key-translation (key-from key-to translate-keys-p)
+       "Make a Key Translation such that if the translate-keys-p function returns true,
+   key-from translates to key-to, else key-from translates to itself.  translate-keys-p
+   takes key-from as an argument. "
+       (define-key key-translation-map key-from
+	 (lambda (prompt)
+	   (if (funcall translate-keys-p key-from) key-to key-from))))
+(defun my-translate-keys-p (key-from)
+  "Returns whether conditional key translations should be active.  See make-conditional-key-translation function. "
+   (or (evil-motion-state-p) (evil-normal-state-p) (evil-visual-state-p)))
+(make-conditional-key-translation (kbd ",") (kbd "C-c") 'my-translate-keys-p)
