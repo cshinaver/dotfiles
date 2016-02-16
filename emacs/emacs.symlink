@@ -100,3 +100,9 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (require 'evil-org)
+
+; Clojure major mode keybindings
+(defun clojure-mode-config ()
+  (local-set-key (kbd "C-x p") 'cider-eval-last-sexp))
+
+(add-hook 'clojure-mode-hook 'clojure-mode-config)
