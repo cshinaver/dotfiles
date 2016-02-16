@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 (require 'package)
-(setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider))
+(setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider org evil-org))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (require 'evil)
@@ -71,3 +71,9 @@
 ; No wrap 
 (set-default 'truncate-lines t)
 
+; org mode
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(require 'evil-org)
