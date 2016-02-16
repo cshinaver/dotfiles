@@ -77,6 +77,9 @@
 ;; gg to top of file
 (global-set-key (kbd "C-x C-x") 'beginning-of-buffer)
 
+;; gf to find file
+(global-set-key (kbd "C-x f") 'ido-find-file)
+
 ;; Clojure setup
 ;; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
