@@ -103,5 +103,9 @@
   (local-set-key (kbd "C-x r") 'cider-switch-to-repl-buffer)
   (local-set-key (kbd "C-x j") 'cider-jack-in))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
+
+; Emacs lisp
+(add-hook 'emacs-lisp-mode-hook (lambda () (local-set-key (kbd "C-x p") 'eval-last-sexp)))
+
 ; CIDER
 (add-hook 'cider-repl-mode-hook (lambda () (local-set-key (kbd "C-x r") 'cider-switch-to-last-clojure-buffer)))
