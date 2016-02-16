@@ -3,6 +3,16 @@
 (setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider org evil-org))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+
+; fetch list of available packages
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; Install missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 (require 'evil)
 (require 'evil-magit)
 (evil-mode 1)
