@@ -1,6 +1,18 @@
 ;; -*- lexical-binding: t -*-
 (require 'package)
-(setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider org evil-org))
+(setq package-list '(
+                     magit
+                     evil-magit
+                     flycheck
+                     python-mode
+                     better-defaults
+                     clojure-mode
+                     cider
+                     org
+                     evil-org
+                     paredit
+                     evil-paredit
+                     ))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
