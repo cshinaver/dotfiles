@@ -1,18 +1,7 @@
 ;; -*- lexical-binding: t -*-
 (require 'package)
-(setq package-list '(
-                     magit
-                     evil-magit
-                     flycheck
-                     python-mode
-                     better-defaults
-                     clojure-mode
-                     cider
-                     org
-                     evil-org
-                     paredit
-                     evil-paredit
-                     ))
+(setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider
+                     org evil-org paredit evil-paredit))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
@@ -25,15 +14,18 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(require 'evil)
-(require 'evil-magit)
-(evil-mode 1)
-
 ;; Install all packages
 (defun install-all-packages ()
   (dolist (package package-list)
     (unless (package-installed-p package)
       (package-install package))))
+
+; Set evil mode
+(require 'evil)
+(evil-mode 1)
+
+; Evil-magit
+(require 'evil-magit)
 
 ; C-hjkl for window movement
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
@@ -41,7 +33,7 @@
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 
- ;;; C-c as general purpose escape key sequence.
+;;; C-c gets out of insertmode
 (defun my-esc (prompt)
   "Functionality for escaping generally.  Includes exiting Evil insert state and C-g binding. "
   (cond
@@ -65,7 +57,7 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-;; Define prefix as c-c
+; Function for key translations only in normal mode, motion, and visual
 ;; Note: lexical-binding must be t in order for this to work correctly.
 (defun make-conditional-key-translation (key-from key-to translate-keys-p)
        "Make a Key Translation such that if the translate-keys-p function returns true,
@@ -77,19 +69,19 @@
 (defun my-translate-keys-p (key-from)
   "Returns whether conditional key translations should be active.  See make-conditional-key-translation function. "
    (or (evil-motion-state-p) (evil-normal-state-p) (evil-visual-state-p)))
+
+;; Define , as c-c
 (make-conditional-key-translation (kbd ",") (kbd "C-c") 'my-translate-keys-p)
+;; g as C-x
 (make-conditional-key-translation (kbd "g") (kbd "C-x") 'my-translate-keys-p)
+;; gg to top of file
 (global-set-key (kbd "C-x C-x") 'beginning-of-buffer)
 
 ;; Clojure setup
 ;; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
 
 ; No wrap 
@@ -97,13 +89,11 @@
 
 ; org mode
 (require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+; Evil org
 (require 'evil-org)
 
 ; Clojure major mode keybindings
 (defun clojure-mode-config ()
   (local-set-key (kbd "C-x p") 'cider-eval-last-sexp))
-
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
