@@ -78,6 +78,7 @@
   "Returns whether conditional key translations should be active.  See make-conditional-key-translation function. "
    (or (evil-motion-state-p) (evil-normal-state-p) (evil-visual-state-p)))
 (make-conditional-key-translation (kbd ",") (kbd "C-c") 'my-translate-keys-p)
+(make-conditional-key-translation (kbd "g") (kbd "C-x") 'my-translate-keys-p)
 
 ;; Clojure setup
 ;; Paredit
