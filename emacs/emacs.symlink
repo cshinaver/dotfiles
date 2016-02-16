@@ -79,6 +79,7 @@
    (or (evil-motion-state-p) (evil-normal-state-p) (evil-visual-state-p)))
 (make-conditional-key-translation (kbd ",") (kbd "C-c") 'my-translate-keys-p)
 (make-conditional-key-translation (kbd "g") (kbd "C-x") 'my-translate-keys-p)
+(global-set-key (kbd "C-x C-x") 'beginning-of-buffer)
 
 ;; Clojure setup
 ;; Paredit
