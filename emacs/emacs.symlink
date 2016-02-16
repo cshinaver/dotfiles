@@ -98,5 +98,10 @@
 
 ; Clojure major mode keybindings
 (defun clojure-mode-config ()
-  (local-set-key (kbd "C-x p") 'cider-eval-last-sexp))
+  (local-set-key (kbd "C-x p") 'cider-eval-last-sexp)
+  (define-key undo-tree-map (kbd "C-x r") nil) ; already defined in undo-tree
+  (local-set-key (kbd "C-x r") 'cider-switch-to-repl-buffer)
+  (local-set-key (kbd "C-x j") 'cider-jack-in))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
+; CIDER
+(add-hook 'cider-repl-mode-hook (lambda () (local-set-key (kbd "C-x r") 'cider-switch-to-last-clojure-buffer)))
