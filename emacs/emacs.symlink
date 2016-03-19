@@ -27,18 +27,40 @@
 
 (install-all-packages)
 
+;; MODE ENABLING
 ; Set evil mode
 (require 'evil)
 (evil-mode 1)
-
-; Evil-magit
 (require 'evil-magit)
+; org mode
+(require 'org)
+(setq org-log-done t)
+; Evil org
+(require 'evil-org)
+;; enable flycheck always
+(global-flycheck-mode)
 
+;; GLOBAL CONFIG
+; No wrap 
+(set-default 'truncate-lines t)
+; C indent
+(setq-default c-basic-offset 4)
+
+
+
+;; GLOBAL KEY MAPPING
 ; C-hjkl for window movement
 (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+; gg to top of file
+(global-set-key (kbd "C-x C-x") 'beginning-of-buffer)
+; gf to find file
+(global-set-key (kbd "C-x f") 'ido-find-file)
+; C-z suspends emacs
+(define-key evil-normal-state-map (kbd "C-z") nil)
+(define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
 
 ;;; C-c gets out of insertmode
 (defun my-esc (prompt)
@@ -55,9 +77,6 @@
 ;; Works around the fact that Evil uses read-event directly when in operator state, which
 ;; doesn't use the key-translation-map.
 (define-key evil-operator-state-map (kbd "C-c") 'keyboard-quit)
-
-;; enable flycheck always
-(global-flycheck-mode)
 
 ; Function for key translations only in normal mode, motion, and visual
 ;; Note: lexical-binding must be t in order for this to work correctly.
@@ -76,27 +95,13 @@
 (make-conditional-key-translation (kbd ",") (kbd "C-c") 'my-translate-keys-p)
 ;; g as C-x
 (make-conditional-key-translation (kbd "g") (kbd "C-x") 'my-translate-keys-p)
-;; gg to top of file
-(global-set-key (kbd "C-x C-x") 'beginning-of-buffer)
-
-;; gf to find file
-(global-set-key (kbd "C-x f") 'ido-find-file)
 
 ;; Clojure setup
-;; Paredit
+; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
-
-; No wrap 
-(set-default 'truncate-lines t)
-
-; org mode
-(require 'org)
-(setq org-log-done t)
-; Evil org
-(require 'evil-org)
 
 ; Clojure major mode keybindings
 (defun clojure-mode-config ()
@@ -111,12 +116,3 @@
 
 ; CIDER
 (add-hook 'cider-repl-mode-hook (lambda () (local-set-key (kbd "C-x r") 'cider-switch-to-last-clojure-buffer)))
-
-(setq compilation-read-command nil)
-(global-set-key (kbd "C-c r") 'compile)
-
-; C indent
-(setq-default c-basic-offset 4)
-
-(define-key evil-normal-state-map (kbd "C-z") nil)
-(define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
