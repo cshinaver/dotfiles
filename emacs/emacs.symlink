@@ -1,7 +1,17 @@
 ;; -*- lexical-binding: t -*-
 (require 'package)
-(setq package-list '(magit evil-magit flycheck python-mode better-defaults clojure-mode cider
-                     org evil-org paredit evil-paredit))
+(setq package-list '(
+                     better-defaults
+                     cider
+                     clojure-mode
+                     evil-magit
+                     evil-org
+                     evil-paredit
+                     flycheck
+                     magit
+                     org
+                     paredit
+                     python-mode))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
@@ -9,16 +19,13 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-; Install missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
-
 ;; Install all packages
 (defun install-all-packages ()
   (dolist (package package-list)
     (unless (package-installed-p package)
       (package-install package))))
+
+(install-all-packages)
 
 ; Set evil mode
 (require 'evil)
