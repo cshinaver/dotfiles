@@ -107,3 +107,6 @@
 
 (setq compilation-read-command nil)
 (global-set-key (kbd "C-c r") 'compile)
+
+; C indent
+(setq-default c-basic-offset 4)
