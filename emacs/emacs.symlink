@@ -110,3 +110,6 @@
 
 ; C indent
 (setq-default c-basic-offset 4)
+
+(define-key evil-normal-state-map (kbd "C-z") nil)
+(define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
