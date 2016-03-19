@@ -52,11 +52,6 @@
 ;; enable flycheck always
 (global-flycheck-mode)
 
-;; Python mode loading
-(autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-
 ; Function for key translations only in normal mode, motion, and visual
 ;; Note: lexical-binding must be t in order for this to work correctly.
 (defun make-conditional-key-translation (key-from key-to translate-keys-p)
