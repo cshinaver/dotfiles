@@ -109,7 +109,12 @@
   (define-key undo-tree-map (kbd "C-x r") nil) ; already defined in undo-tree
   (local-set-key (kbd "C-x r") 'cider-switch-to-repl-buffer)
   (enable-paredit-mode)
-  (local-set-key (kbd "C-x j") 'cider-jack-in))
+  (local-set-key (kbd "C-x j") 'cider-jack-in)
+  (local-set-key (kbd "C-x n") 'cider-repl-set-ns)
+  (local-set-key (kbd "C-x d") 'cider-doc)
+  (local-set-key (kbd "C-x k") 'cider-load-buffer)
+  (local-set-key (kbd "C-x )") 'paredit-forward-slurp-sexp)
+  (local-set-key (kbd "C-x (") 'paredit-forward-barf-sexp))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
 
 ; Emacs lisp
