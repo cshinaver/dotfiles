@@ -61,6 +61,8 @@
 ; C-z suspends emacs
 (define-key evil-normal-state-map (kbd "C-z") nil)
 (define-key evil-normal-state-map (kbd "C-z") 'suspend-frame)
+; q closes cider popup windows
+(define-key evil-normal-state-map (kbd "q") 'cider-popup-buffer-quit-function)
 
 ;;; C-c gets out of insertmode
 (defun my-esc (prompt)
