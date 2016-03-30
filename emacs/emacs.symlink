@@ -118,4 +118,9 @@
 (add-hook 'emacs-lisp-mode-hook (lambda () (local-set-key (kbd "C-x p") 'eval-last-sexp)))
 
 ; CIDER
-(add-hook 'cider-repl-mode-hook (lambda () (local-set-key (kbd "C-x r") 'cider-switch-to-last-clojure-buffer)))
+(add-hook
+  'cider-repl-mode-hook
+  (lambda ()
+    (local-set-key (kbd "C-x r") 'cider-switch-to-last-clojure-buffer)
+    (evil-emacs-state)))
+
