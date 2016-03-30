@@ -110,6 +110,7 @@
   (local-set-key (kbd "C-x p") 'cider-eval-last-sexp)
   (define-key undo-tree-map (kbd "C-x r") nil) ; already defined in undo-tree
   (local-set-key (kbd "C-x r") 'cider-switch-to-repl-buffer)
+  (enable-paredit-mode)
   (local-set-key (kbd "C-x j") 'cider-jack-in))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
 
