@@ -124,7 +124,9 @@
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
 
 ; Emacs lisp
-(add-hook 'emacs-lisp-mode-hook (lambda () (local-set-key (kbd "C-x p") 'eval-last-sexp)))
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-x p") 'eval-last-sexp)))
 
 ; CIDER
 (add-hook
