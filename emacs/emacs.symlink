@@ -119,6 +119,8 @@
   (local-set-key (kbd "C-x k") 'cider-load-buffer)
   (local-set-key (kbd "C-x )") 'paredit-forward-slurp-sexp)
   (local-set-key (kbd "C-x (") 'paredit-forward-barf-sexp))
+  (local-set-key (kbd "C-c W") 'paredit-wrap-round)
+  (local-set-key (kbd "C-c w [") 'paredit-wrap-square))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
 
 ; Emacs lisp
