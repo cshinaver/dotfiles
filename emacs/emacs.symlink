@@ -115,7 +115,7 @@
   (enable-paredit-mode)
   (local-set-key (kbd "C-x j") 'cider-jack-in)
   (local-set-key (kbd "C-x n") 'cider-repl-set-ns)
-  (local-set-key (kbd "C-x d") 'cider-doc)
+  (define-key evil-normal-state-local-map (kbd "K") 'cider-doc)
   (local-set-key (kbd "C-x k") 'cider-load-buffer)
   (local-set-key (kbd "C-x )") 'paredit-forward-slurp-sexp)
   (local-set-key (kbd "C-x (") 'paredit-forward-barf-sexp)
