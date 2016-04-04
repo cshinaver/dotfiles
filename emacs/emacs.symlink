@@ -102,12 +102,21 @@
 ;; Clojure setup
 ; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 (add-hook 'scheme-mode-hook 'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
 (add-hook 'clojure-mode-hook 'evil-paredit-mode)
+
+
+; Emacs Lisp
+(defun emacs-lisp-mode-config ()
+  (enable-paredit-mode)
+  (local-set-key (kbd "C-x p") 'eval-last-sexp)
+  (define-key evil-normal-state-local-map (kbd "K") 'describe-function)
+  (local-set-key (kbd "C-x v") 'describe-variable)
+  (define-key evil-normal-state-map (kbd "q") 'delete-other-windows)
+(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-config)
 
 ; Python mode config
 (defun python-mode-config ()
@@ -133,11 +142,6 @@
   (local-set-key (kbd "C-c W") 'paredit-wrap-round)
   (local-set-key (kbd "C-c w [") 'paredit-wrap-square))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
-
-; Emacs lisp
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-x p") 'eval-last-sexp)))
 
 ; CIDER
 (add-hook
