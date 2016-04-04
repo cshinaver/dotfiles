@@ -99,6 +99,14 @@
 ;; g as C-x
 (make-conditional-key-translation (kbd "g") (kbd "C-x") 'my-translate-keys-p)
 
+; Paredit bindings
+(defun local-paredit-keys ()
+  (local-set-key (kbd "C-x )") 'paredit-forward-slurp-sexp)
+  (local-set-key (kbd "C-x (") 'paredit-forward-barf-sexp)
+  (local-set-key (kbd "C-c W") 'paredit-wrap-round)
+  (local-set-key (kbd "C-c w [") 'paredit-wrap-square)
+  )
+
 ;; Clojure setup
 ; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -116,6 +124,7 @@
   (define-key evil-normal-state-local-map (kbd "K") 'describe-function)
   (local-set-key (kbd "C-x v") 'describe-variable)
   (define-key evil-normal-state-map (kbd "q") 'delete-other-windows)
+  (local-paredit-keys))
 (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-config)
 
 ; Python mode config
@@ -137,10 +146,8 @@
   (local-set-key (kbd "C-x n") 'cider-repl-set-ns)
   (define-key evil-normal-state-local-map (kbd "K") 'cider-doc)
   (local-set-key (kbd "C-x k") 'cider-load-buffer)
-  (local-set-key (kbd "C-x )") 'paredit-forward-slurp-sexp)
-  (local-set-key (kbd "C-x (") 'paredit-forward-barf-sexp)
-  (local-set-key (kbd "C-c W") 'paredit-wrap-round)
-  (local-set-key (kbd "C-c w [") 'paredit-wrap-square))
+  (local-paredit-keys)
+  )
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
 
 ; CIDER
