@@ -157,3 +157,10 @@
     (local-set-key (kbd "C-x r") 'cider-switch-to-last-clojure-buffer)
     (define-key evil-normal-state-map (kbd "q") 'cider-popup-buffer-quit-function)
     (evil-emacs-state)))
+
+; 4clojure mode
+(defun 4clojure-mode ()
+  (local-set-key (kbd "C-c n") '4clojure-next-question)
+  (local-set-key (kbd "C-c c") '4clojure-check-answers)
+  (local-set-key (kbd "C-c p") '4clojure-previous-question))
+
