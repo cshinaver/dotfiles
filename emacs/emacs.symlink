@@ -12,7 +12,9 @@
         magit
         org
         paredit
-        python-mode))
+        python-mode
+        elpy
+        ))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
@@ -106,6 +108,15 @@
 (add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
 (add-hook 'clojure-mode-hook 'evil-paredit-mode)
+
+; Python mode config
+(defun python-mode-config ()
+  (elpy-enable)
+  (elpy-use-ipython)
+  (define-key evil-normal-state-local-map (kbd "K") 'elpy-doc)
+  (define-key evil-insert-state-local-map  (kbd "C-p") 'completion-at-point)
+  )
+(add-hook 'python-mode-hook 'python-mode-config)
 
 ; Clojure major mode keybindings
 (defun clojure-mode-config ()
