@@ -193,6 +193,7 @@ set autoindent    " align the new line indent with the previous line
 "set nowrap        " don't wrap lines
 set copyindent    " copies previous indentation on autoindenting
 set number        " always show line numbers
+set relativenumber " also show relative line numbers
 set showmatch     " shows matching parenthesis
 set ignorecase    " ignore case when searching
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
