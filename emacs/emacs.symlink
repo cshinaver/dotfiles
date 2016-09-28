@@ -164,3 +164,6 @@
   (local-set-key (kbd "C-c c") '4clojure-check-answers)
   (local-set-key (kbd "C-c p") '4clojure-previous-question))
 
+; Customize interface variables
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
