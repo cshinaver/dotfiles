@@ -63,29 +63,29 @@ bind-key -t vi-copy v begin-selection
 set-option -g status on                # turn the status bar on
 # set -g status-interval 5               # set update frequencey (default 15 seconds)
 set -g status-justify centre           # center window list for clarity
-# 
+#
 # visual notification of activity in other windows
 setw -g monitor-activity on
 set -g visual-activity on
- 
+
 # set color for status bar
 # set-option -g status-bg colour235 #base02
 # set-option -g status-fg yellow #yellow
-# set-option -g status-attr dim 
-#  
+# set-option -g status-attr dim
+#
 # # set window list colors - red for active and cyan for inactive
 # set-window-option -g window-status-fg brightblue #base0
-# set-window-option -g window-status-bg colour236 
+# set-window-option -g window-status-bg colour236
 # set-window-option -g window-status-attr dim
-#  
+#
 # set-window-option -g window-status-current-fg brightred #orange
-# set-window-option -g window-status-current-bg colour236 
+# set-window-option -g window-status-current-bg colour236
 # set-window-option -g window-status-current-attr bright
- 
+
 # show host name and IP address on left side of status bar
 set -g status-left-length 70
 set -g status-left "#[fg=green]: #h"
- 
+
 # show session name, window & pane number, date and time on right side of
 # status bar
 set -g status-right-length 60
@@ -104,40 +104,38 @@ bind ^A select-pane -t :.+
 bind-key -n F9 split-window -h \; send-keys 'vcurrent_test' Enter;
 
 ## new stuff ##
-# --- colors (solarized dark)                                      
-# default statusbar colors                                         
-set -g status-bg black                                             
-set -g status-fg yellow                                            
-set -g status-attr default                                         
-                                                                   
-# default window title colors                                      
-setw -g window-status-fg brightblue                                
-setw -g window-status-bg default                                   
-                                                                   
-# active window title colors                                       
-setw -g window-status-current-fg yellow                            
-setw -g window-status-current-bg default                           
-setw -g window-status-current-attr dim                             
-                                                                   
-# pane border                                                      
-set -g pane-border-fg black                                        
-set -g pane-border-bg default                                      
-set -g pane-active-border-fg yellow                                
-set -g pane-active-border-bg default                               
-                                                                   
-# command line/message text                                        
-set -g message-bg black                                            
-set -g message-fg yellow                                           
-                                                                   
-# pane number display                                              
-set -g display-panes-active-colour yellow                          
-set -g display-panes-colour brightblue                             
-                                                                   
-# clock                                                            
-setw -g clock-mode-colour yellow                                   
-# --- end colors
+# --- colors (solarized dark)
+# default statusbar colors
+set -g status-bg black
+set -g status-fg yellow
+set -g status-attr default
 
-set-window-option -g utf8 on
+# default window title colors
+setw -g window-status-fg brightblue
+setw -g window-status-bg default
+
+# active window title colors
+setw -g window-status-current-fg yellow
+setw -g window-status-current-bg default
+setw -g window-status-current-attr dim
+
+# pane border
+set -g pane-border-fg black
+set -g pane-border-bg default
+set -g pane-active-border-fg yellow
+set -g pane-active-border-bg default
+
+# command line/message text
+set -g message-bg black
+set -g message-fg yellow
+
+# pane number display
+set -g display-panes-active-colour yellow
+set -g display-panes-colour brightblue
+
+# clock
+setw -g clock-mode-colour yellow
+# --- end colors
 
 # OS Specific loading
 if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'
