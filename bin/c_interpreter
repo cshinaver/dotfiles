@@ -1,0 +1,40 @@
+#!/bin/sh
+# c_interpreter
+# Executes a single C file
+
+CC=gcc
+
+usage() {
+    cat <<EOF
+Usage: ./c_interpreter <source_file>
+
+    Executes a single C source file and returns output.
+EOF
+    exit 0
+}
+
+cleanup() {
+    [ -f "$TEMP_FILE" ] && rm "$TEMP_FILE"
+}
+
+main() {
+    TEMP_FILE=$(mktemp)
+
+    $CC -o "$TEMP_FILE" "$SOURCE_FILE"
+
+    "$TEMP_FILE"
+
+    cleanup
+}
+
+while getopts h arg; do
+    case $arg in
+        h) usage ;;
+    esac
+done
+
+shift $((OPTIND - 1))
+
+SOURCE_FILE=$1
+
+main
