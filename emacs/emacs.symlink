@@ -146,8 +146,8 @@
   (local-set-key (kbd "C-x n") 'cider-repl-set-ns)
   (define-key evil-normal-state-local-map (kbd "K") 'cider-doc)
   (local-set-key (kbd "C-x k") 'cider-load-buffer)
-  (local-paredit-keys)
-  )
+  (local-set-key (kbd "C-x t") 'cider-test-run-test)
+  (local-paredit-keys))
 (add-hook 'clojure-mode-hook 'clojure-mode-config)
 
 ; CIDER
