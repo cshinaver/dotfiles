@@ -90,6 +90,9 @@ Plugin 'tpope/vim-dispatch'
 " unimparied
 Plugin 'tpope/vim-unimpaired'
 
+" vim syntax extra
+Plugin 'justinmk/vim-syntax-extra'
+
 " Snippets
 " Plugin 'MarcWeber/vim-addon-mw-utils'
 " Plugin 'tomtom/tlib_vim'
