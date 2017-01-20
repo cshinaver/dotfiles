@@ -133,7 +133,7 @@ set secure
 let g:user_emmet_leader_key=','
 " Emmet only works for html/css files
 let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,css EmmetInstall
+autocmd FileType html,htmldjango,css,eruby EmmetInstall
 
 " %% expands to curdir
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
