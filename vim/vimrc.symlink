@@ -73,9 +73,6 @@ Plugin 'kchmck/vim-coffee-script'
 " vim-objc
 Plugin 'b4winckler/vim-objc'
 
-" bison syntax highlighter
-Plugin 'justinmk/vim-syntax-extra'
-
 " Clojure
 Plugin 'guns/vim-clojure-static' " syntax highlighting/indentation
 Plugin 'tpope/vim-fireplace' " REPL and dynamic development
@@ -92,6 +89,9 @@ Plugin 'tpope/vim-dispatch'
 
 " unimparied
 Plugin 'tpope/vim-unimpaired'
+
+" vim syntax extra
+Plugin 'justinmk/vim-syntax-extra'
 
 " Snippets
 " Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -133,7 +133,7 @@ set secure
 let g:user_emmet_leader_key=','
 " Emmet only works for html/css files
 let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,css EmmetInstall
+autocmd FileType html,htmldjango,css,eruby EmmetInstall
 
 " %% expands to curdir
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -170,7 +170,8 @@ set backspace=eol,start,indent
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_c_checkers = ['gcc']
-let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_cpplint_exec = 'cpplint'
+let g:syntastic_cpp_checkers = ['cpplint']
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_perl_checkers = ['perl']
