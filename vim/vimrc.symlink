@@ -296,6 +296,9 @@ let g:ctrlp_custom_ignore = {
 " Map CtrlPTag to CTRL T
 nnoremap <C-t> :CtrlPTag<CR>
 
+" Map c-g to redraw
+nnoremap <C-g> :redraw!<CR>
+
 " F9 runs Exuberant Ctags
 nmap <F9> :!ctags -R .<CR><CR>
 
