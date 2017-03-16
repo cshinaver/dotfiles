@@ -10,4 +10,4 @@
                   [lein-kibit "0.1.2"]
                   [lein-pprint "1.1.1"]
                   [venantius/ultra "0.3.4"]
-                  ]}}
+                  [cider/cider-nrepl "0.15.0-SNAPSHOT"]]}}
