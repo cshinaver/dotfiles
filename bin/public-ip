@@ -1,0 +1,3 @@
+#!/bin/sh
+# Prints public ip using ipecho.net
+curl ipecho.net/plain
