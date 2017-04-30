@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Starting vpn with openvpn and pia..."
+sudo openvpn --config /etc/openvpn/client/US_East.conf
