@@ -1,0 +1,17 @@
+#!/bin/bash
+# Mounts acd and union filesystem
+
+ACD_UNENCRYPTED="$HOME/acd-drive"
+ACD_ENCRYPTED="$HOME/.acd-drive"
+LOCAL_UNENCRYPTED="$HOME/local-drive"
+LOCAL_ENCRYPTED="$HOME/.local-drive"
+UNION_PATH="$HOME/cloud-drive"
+export ENCFS6_CONFIG="$HOME/.acd-encfs6.xml"
+
+read -s -p "Encfs Password: " password
+echo
+echo $password | encfs -S $LOCAL_ENCRYPTED $LOCAL_UNENCRYPTED
+echo $password | encfs -S $ACD_ENCRYPTED $ACD_UNENCRYPTED
+unionfs-fuse -o cow "$LOCAL_UNENCRYPTED=RW:$ACD_UNENCRYPTED=RO" "$UNION_PATH"
+
+echo "Cloud drive mounted"
