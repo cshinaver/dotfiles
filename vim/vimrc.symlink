@@ -26,7 +26,8 @@ Plugin 'kien/ctrlp.vim'
 " Gundo, Visualizeand traverse your undo tree
 Plugin 'sjl/gundo.vim'
 
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 
 " Vim-colors-solarized, Solarized color scheme
 Plugin 'altercation/vim-colors-solarized'
@@ -39,6 +40,8 @@ Plugin 'rust-lang/rust.vim'
 
 " emmet-vim (html)
 Plugin 'mattn/emmet-vim'
+
+Plugin 'ElmCast/elm-vim'
 
 " textobj-indent
 Plugin 'michaeljsmith/vim-indent-object'
@@ -179,6 +182,7 @@ let g:syntastic_enable_perl_checker = 1
 
 " Auto loc list opening
 let g:syntastic_auto_loc_list = 0
+let g:elm_syntastic_show_warnings = 1
 
 " Paste toggle
 set pastetoggle=<F2>
