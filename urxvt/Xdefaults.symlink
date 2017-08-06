@@ -1,8 +1,13 @@
+!!! Appearance
 ! Background color
 URxvt*background:#1b2b34
+! Foreground cursor color
+URxvt*foreground:#1b2b34
 
+! Font
 URxvt.font: xft:SourceCodePro:bold:size=11
 
+!!! Plugins
 ! Yankable URLs
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
