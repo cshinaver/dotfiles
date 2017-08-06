@@ -1,8 +1,5 @@
 ! Background color
-URxvt*background:black
-
-! Font color
-URxvt*foreground:white
+URxvt*background:#1b2b34
 
 ! Yankable URLs
 URxvt.perl-ext: default,url-select
